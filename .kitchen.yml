@@ -1,0 +1,30 @@
+---
+driver:
+  name: docker
+  binary: docker
+  use_sudo: false
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: debian-7
+  - name: debian-8
+  - name: ubuntu-12.04
+  - name: ubuntu-14.04
+
+suites:
+  - name: attributes
+    run_list:
+      - recipe[cloud_init]
+    attributes:
+      cloud_init:
+        cfgs:
+          hostname:
+            priority: 42
+            config:
+              preserve_hostname: true
+  - name: lwrp
+    run_list:
+      - recipe[cloud_init]
+      - recipe[cloud_init_lwrp]
