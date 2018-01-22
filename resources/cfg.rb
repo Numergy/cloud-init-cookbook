@@ -19,7 +19,6 @@
 resource_name :cloud_init_cfg
 provides :cloud_init_cfg
 
-property :name, String
 property :priority, Integer, default: 99
 property :config, [Array, Hash, Mash], default: {}
 
@@ -42,8 +41,6 @@ action :create do
     variables config: new_resource.config
     cookbook 'cloud_init'
   end
-
-  new_resource.updated_by_last_action(true)
 end
 
 action :delete do
@@ -53,6 +50,4 @@ action :delete do
   file "/etc/cloud/cloud.cfg.d/#{priority}_#{name}.cfg" do
     action :delete
   end
-
-  new_resource.updated_by_last_action(true)
 end

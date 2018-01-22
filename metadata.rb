@@ -3,10 +3,11 @@
 name 'cloud_init'
 maintainer 'Antoine Rouyer'
 maintainer_email 'antoine.rouyer@numergy.com'
-license 'Apache 2.0'
+license 'Apache-2.0'
 description 'Deploy cloud-init configuration files'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version '0.1.0'
+chef_version '>= 13.0' if respond_to?(:chef_version)
 
 recipe 'cloud_init::default', 'Deploy cloud-init config from attributes'
 
