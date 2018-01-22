@@ -1,3 +1,12 @@
 language: ruby
 rvm:
-  - 2.3.0
+  - 2.3.1
+services:
+  - docker
+env:
+  matrix:
+    - CHEF_VERSION=12
+    - CHEF_VERSION=13
+script:
+  - bundle exec rake
+  - bundle exec rake test:kitchen

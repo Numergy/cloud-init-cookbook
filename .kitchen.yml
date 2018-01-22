@@ -6,6 +6,7 @@ driver:
 
 provisioner:
   name: chef_zero
+  require_chef_omnibus: <%= ENV['CHEF_VERSION'] || 13 %>
 
 platforms:
   - name: debian-8
