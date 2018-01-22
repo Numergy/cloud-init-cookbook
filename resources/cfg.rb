@@ -20,7 +20,7 @@ actions :create, :delete
 
 attribute :name, kind_of: String, name_attribute: true
 attribute :priority, kind_of: Integer, default: 99
-attribute :config, kind_of: Hash, default: {}
+attribute :config, kind_of: [Array, Mash, Hash]
 
 def initialize(*args)
   super
