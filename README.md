@@ -10,10 +10,10 @@ Requirements
 
 #### Platforms
 The following platforms and versions are tested and supported using Opscode's test-kitchen.
-- `Debian 7`
 - `Debian 8`
-- `Ubuntu 12.04`
+- `Debian 9`
 - `Ubuntu 14.04`
+- `Ubuntu 16.04`
 
 Attributes
 ----------
@@ -81,28 +81,13 @@ cloud_init_cfg 'hostname' do
 end
 ```
 
-Tests
------
-
-- First, install dependencies:  
-`bundle install`
-
-- Run Checkstyle and ChefSpec:  
-`bundle exec rake`
-
-- Run Kitchen tests:
-`bundle exec rake kitchen`
-
-Docker driver is used for integration testing with test-kitchen. You will need to have docker installed to run integration testing, or adapt the existing .kitchen.yml for your driver.
+Testing
+-------
+See [TESTING.md](TESTING.md)
 
 Contributing
 ------------
-1. Fork the repository on Github
-2. Create a named feature branch (like `add_component_x`)
-3. Write your change
-4. Write tests for your change (if applicable)
-5. Run the tests, ensuring they all pass
-6. Submit a Pull Request using Github
+See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 License and Authors
 -------------------
