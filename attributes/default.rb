@@ -16,4 +16,4 @@
 # limitations under the License.
 #
 
-default['cloud_init']['cfgs'] = []
+default['cloud_init']['cfgs'] = {}
