@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Cookbook Name:: cloud_init
+# Cookbook:: cloud_init
 # Attributes:: default
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
