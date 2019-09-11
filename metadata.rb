@@ -5,7 +5,7 @@ maintainer 'Antoine Rouyer'
 maintainer_email 'antoine.rouyer@numergy.com'
 license 'Apache-2.0'
 description 'Deploy cloud-init configuration files'
-version '0.2.0'
+version '0.2.1'
 chef_version '>= 12.15'
 
 recipe 'cloud_init::default', 'Deploy cloud-init config from attributes'

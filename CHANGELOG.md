@@ -3,9 +3,13 @@ cloud_init CHANGELOG
 
 This file is used to list changes made in each version of the cloud_init cookbook.
 
+0.2.1
+-----
+- Fixed default attribute type [#2](https://github.com/Numergy/cloud-init-cookbook/issues/2)
+
 0.2.0
 -----
-- Improved configuration template file (#1)
+- Improved configuration template file [#1](https://github.com/Numergy/cloud-init-cookbook/pull/1)
 
 0.1.0
 -----
