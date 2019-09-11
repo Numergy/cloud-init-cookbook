@@ -11,6 +11,6 @@ group :lint do
 end
 
 group :kitchen do
-  gem 'test-kitchen', '=1.3.1'
-  gem 'kitchen-docker', '=2.1.0'
+  gem 'test-kitchen'
+  gem 'kitchen-docker'
 end
