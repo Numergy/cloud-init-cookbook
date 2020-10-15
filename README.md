@@ -12,8 +12,10 @@ Requirements
 The following platforms and versions are tested and supported using Opscode's test-kitchen.
 - `Debian 8`
 - `Debian 9`
-- `Ubuntu 14.04`
+- `Debian 10`
 - `Ubuntu 16.04`
+- `Ubuntu 18.04`
+- `Ubuntu 20.04`
 
 Attributes
 ----------
