@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-#
 # Cookbook:: cloud_init
 # Attributes:: default
 #

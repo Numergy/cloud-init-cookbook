@@ -1,7 +1,5 @@
-# -*- coding: utf-8 -*-
-#
 # Cookbook:: cloud_init
-# Resource:: cfg
+# Resource:: cloud_init_cfg
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,6 +16,7 @@
 
 resource_name :cloud_init_cfg
 provides :cloud_init_cfg
+default_action :create
 
 property :priority, Integer, default: 99
 property :config, [Array, Hash, Mash], default: {}

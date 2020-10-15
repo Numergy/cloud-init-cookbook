@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 name 'cloud_init_lwrp'
 maintainer 'Antoine Rouyer'
 maintainer_email 'antoine.rouyer@numergy.com'
