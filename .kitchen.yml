@@ -14,16 +14,29 @@ verifier:
 
 platforms:
   - name: debian-8
+    run_list:
+      - recipe[apt]
   - name: debian-9
+    run_list:
+      - recipe[apt]
   - name: debian-10
+    run_list:
+      - recipe[apt]
   - name: ubuntu-16.04
+    run_list:
+      - recipe[apt]
   - name: ubuntu-18.04
+    run_list:
+      - recipe[apt]
   - name: ubuntu-20.04
+    run_list:
+      - recipe[apt]
 
 suites:
-  - name: attributes
+  - name: default
     run_list:
       - recipe[cloud_init]
+      - recipe[cloud_init::upgrade]
     attributes:
       cloud_init:
         cfgs:
@@ -31,7 +44,26 @@ suites:
             priority: 42
             config:
               preserve_hostname: true
-  - name: lwrp
+  - name: disable
+    run_list:
+      - recipe[cloud_init]
+      - recipe[cloud_init::disable]
+  - name: remove
+    run_list:
+      - recipe[cloud_init]
+      - recipe[cloud_init::remove]
+  - name: purge
+    run_list:
+      - recipe[cloud_init]
+      - recipe[cloud_init::purge]
+    attributes:
+      cloud_init:
+        cfgs:
+          hostname:
+            priority: 42
+            config:
+              preserve_hostname: true
+  - name: lwrp_cfg
     run_list:
       - recipe[cloud_init]
       - recipe[cloud_init_lwrp]

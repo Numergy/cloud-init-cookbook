@@ -28,7 +28,7 @@ Attributes
 Usage
 -----
 #### cloud_init::default
-Include `cloud_init` in your node's `run_list` and set the `cfgs` attribute to create configuration files:
+Include `cloud_init` in your node's `run_list` and set the `cfgs` attribute to install `cloud-init` package and create configuration files:
 
 ```json
 {
@@ -56,7 +56,91 @@ This setup will create the configuration file `/etc/cloud/cloud.cfg.d/90_hostnam
 preserve_hostname: true
 ```
 
+#### cloud_init::upgrade
+Include `cloud_init::upgrade` in your node's `run_list` to upgrade `cloud-init` package.
+
+```json
+{
+  "name":"my_node",
+  "run_list": [
+    "recipe[cloud_init::upgrade]"
+  ]
+}
+```
+
+#### cloud_init::disable
+Include `cloud_init::disable` in your node's `run_list` to disable `cloud-init`.
+
+```json
+{
+  "name":"my_node",
+  "run_list": [
+    "recipe[cloud_init::disable]"
+  ]
+}
+```
+
+#### cloud_init::remove
+Include `cloud_init::remove` in your node's `run_list` to remove `cloud-init` package.
+
+```json
+{
+  "name":"my_node",
+  "run_list": [
+    "recipe[cloud_init::remove]"
+  ]
+}
+```
+
+#### cloud_init::purge
+Include `cloud_init::purge` in your node's `run_list` to purge `cloud-init` package and remove cloud directories (`/etc/cloud`, `/var/lib/cloud`).
+
+```json
+{
+  "name":"my_node",
+  "run_list": [
+    "recipe[cloud_init::purge]"
+  ]
+}
+```
+
 #### Custom resources
+
+##### cloud_init
+This LWRP can be used to manipulate `cloud-init` package.
+
+###### Actions
+| Action     | Description                                       |
+| ---------  | ------------------------------------------------- |
+| `:install` | Install `cloud-init`                              |
+| `:upgrade` | Upgrade `cloud-init`                              |
+| `:disable` | Disable `cloud-init`                              |
+| `:remove`  | Remove `cloud-init`                               |
+| `:purge`   | Purge `cloud-init` and remove configuration files |
+
+
+###### Attributes
+This LWRP doesn't have any attributes, the name attribute can be whatever.
+
+###### Examples
+####### Install cloud-init
+```ruby
+cloud_init 'default'
+```
+
+####### Disable cloud-init
+```ruby
+cloud_init 'default' do
+  action :disable
+end
+```
+
+####### Purge cloud-init
+```ruby
+cloud_init 'default' do
+  action :purge
+end
+```
 
 ##### cloud_init_cfg
 This LWRP can be used to deploy cloud_init configuration files.
@@ -77,6 +161,8 @@ This LWRP can be used to deploy cloud_init configuration files.
 
 ###### Example
 ```ruby
+cloud_init 'default'
+
 cloud_init_cfg 'hostname' do
   priority 90
   config preserve_hostname: true

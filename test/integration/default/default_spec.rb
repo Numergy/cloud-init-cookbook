@@ -1,3 +1,7 @@
+describe package 'cloud-init' do
+  it { should be_installed }
+end
+
 describe file '/etc/cloud/cloud.cfg.d/42_hostname.cfg' do
   it { should be_file }
   it { should be_mode 0644 }

@@ -1,5 +1,5 @@
 # Cookbook:: cloud_init
-# Recipe:: default
+# Recipe:: disable
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,12 +15,5 @@
 #
 
 cloud_init 'default' do
-  action :install
-end
-
-node['cloud_init']['cfgs'].each do |name, cfg|
-  cloud_init_cfg name do
-    priority cfg['priority']
-    config cfg['config']
-  end
+  action :disable
 end
