@@ -11,7 +11,7 @@ AllCops:
     - spec/**/*
     - test/**/*
 
-LineLength:
+Layout/LineLength:
   Exclude:
     - attributes/**/*
     - test/**/*
