@@ -32,6 +32,12 @@ action :disable do
   end
 end
 
+action :enable do
+  file '/etc/cloud/cloud-init.disabled' do
+    action :delete
+  end
+end
+
 action :upgrade do
   package 'cloud-init' do
     action :upgrade

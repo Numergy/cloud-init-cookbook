@@ -80,6 +80,18 @@ Include `cloud_init::disable` in your node's `run_list` to disable `cloud-init`.
 }
 ```
 
+#### cloud_init::enable
+Include `cloud_init::enable` in your node's `run_list` to enable `cloud-init`.
+
+```json
+{
+  "name":"my_node",
+  "run_list": [
+    "recipe[cloud_init::enable]"
+  ]
+}
+```
+
 #### cloud_init::remove
 Include `cloud_init::remove` in your node's `run_list` to remove `cloud-init` package.
 
@@ -115,6 +127,7 @@ This LWRP can be used to manipulate `cloud-init` package.
 | `:install` | Install `cloud-init`                              |
 | `:upgrade` | Upgrade `cloud-init`                              |
 | `:disable` | Disable `cloud-init`                              |
+| `:enable`  | Enable `cloud-init`                               |
 | `:remove`  | Remove `cloud-init`                               |
 | `:purge`   | Purge `cloud-init` and remove configuration files |
 

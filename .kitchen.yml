@@ -48,6 +48,11 @@ suites:
     run_list:
       - recipe[cloud_init]
       - recipe[cloud_init::disable]
+  - name: enable
+    run_list:
+      - recipe[cloud_init]
+      - recipe[cloud_init::disable]
+      - recipe[cloud_init::enable]
   - name: remove
     run_list:
       - recipe[cloud_init]
