@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'chef', "~> #{ENV['CHEF_VERSION'] || 13}"
+chef = (ENV['CHEF_VERSION'] || 13).to_i
+
+gem 'chef', "~> #{chef}"
 gem 'berkshelf'
 gem 'rake'
 
@@ -12,5 +14,5 @@ end
 group :kitchen do
   gem 'test-kitchen'
   gem 'kitchen-docker'
-  gem 'kitchen-inspec'
+  gem 'kitchen-inspec', chef <= 12 ? '= 1.2.0' : '~> 2'
 end
