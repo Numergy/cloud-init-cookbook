@@ -123,19 +123,19 @@ This LWRP can be used to manipulate `cloud-init` package.
 This LWRP doesn't have any attributes, the name attribute can be whatever.
 
 ###### Examples
-####### Install cloud-init
+Install `cloud-init`:
 ```ruby
 cloud_init 'default'
 ```
 
-####### Disable cloud-init
+Disable `cloud-init`:
 ```ruby
 cloud_init 'default' do
   action :disable
 end
 ```
 
-####### Purge cloud-init
+Purge `cloud-init`:
 ```ruby
 cloud_init 'default' do
   action :purge
@@ -143,7 +143,7 @@ end
 ```
 
 ##### cloud_init_cfg
-This LWRP can be used to deploy cloud_init configuration files.
+This LWRP can be used to deploy `cloud-init` configuration files.
 
 ###### Actions
 |  Action   |  Description                           |
@@ -156,7 +156,7 @@ This LWRP can be used to deploy cloud_init configuration files.
 | ---------- | -------- | ----------------------------------------------------------------------------- |
 | `name`     | String   | Name of the configuration file, this is the name attribute                    |
 | `priority` | Interger | Priority of configuration file, The config filename is prefixed by this value |
-| `config`   | Hash     | Hash configuration, used by the template.                                 |
+| `config`   | Hash     | Hash configuration, used by the template.                                     |
 
 
 ###### Example
